@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-sarif;
+    transition: 0.3s ease;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+
+/* HEADER */
+
+nav {
+    position: fixed;
+    top: 0;
+    background: #121211;
+    height: 4rem;
+    width: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+label.logo {
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 4rem;
+    padding: 0 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+nav ul {
+    float: right;
+    margin-right: 1.4rem;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 4rem;
+    margin: 0 .4rem;
+}
+
+nav ul li a {
+    color: #ccc;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: .5rem .5rem;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background: #333;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background: #333;
+}
+
+.checkbtn {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    float: right;
+    line-height: 4rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+#title {
+    animation: show 3s ease infinite;
+}
+
+@keyframes show {
+    0% {
+        letter-spacing: 2px;
+        border: 1px solid #121211;
+    }
+    25% {
+        letter-spacing: 3px;
+        border: 1px solid #fff;
+    }
+    50% {
+        letter-spacing: 3px;
+        border: 1px solid #fff;
+    }
+    75% {
+        letter-spacing: 3px;
+        border: 1px solid #fff;
+    }
+    100% {
+        letter-spacing: 2px;
+        border: 1px solid #121211;
+    }
+}
+
+
+/* CARDS */
+
+.card-container {
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4em;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2em;
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    max-width: 20em;
+    width: 20em;
+    height: auto;
+    margin: 1.5em;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    max-height: 14em;
+}
+
+.card-image img {
+    max-width: 100%;
+    height: 14em;
+}
+
+.card-info {
+    position: relative;
+    color: #222;
+    padding: 0.6em 2.2em 2.2em;
+}
+
+.card-info h3 {
+    font-size: 1.8em;
+    font-weight: 800;
+    margin-bottom: 0.3em;
+}
+
+.card-info p {
+    font-size: 1em;
+    margin-bottom: 0.3em;
+}
+
+
+/* PAGINATION */
+
+.pagination {
+    text-align: center;
+    margin: 1.9em 1.9em 3.8em;
+    user-select: none;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0.3em;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.3);
+}
+
+.pagination li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    line-height: 2.6em;
+}
+
+.previous-page,
+.next-page {
+    background: #0AB1CE;
+    width: 5em;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.previous-page:hover {
+    transform: translateX(-5px);
+}
+
+.next-page:hover {
+    transform: translateX(5px);
+}
+
+.current-page,
+.dots {
+    background: #ccc;
+    width: 2.8em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.current-page:hover,
+.dots:hover {
+    transform: translateY(-5px);
+}
+
+.pagination li.active {
+    background: #333;
+}
+
+.pagination li.disable {
+    background: #ccc;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 1.6rem;
+        padding-left: 1rem;
+    }
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 800px) {
+    body {
+        font-size: 12px;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #121211;
+        top: 4rem;
+        right: -100%;
+        text-align: center;
+        margin: 0;
+    }
+    nav ul li {
+        display: block;
+        margin: 3rem 0;
+        line-height: 2rem;
+    }
+    nav ul li a {
+        font-size: 1.3rem;
+    }
+    nav ul li a.active,
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background: none;
+        color: #fff;
+        letter-spacing: 2px;
+        font-weight: 600;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-radius: 0;
+        text-decoration: none;
+    }
+    #check:checked~ul {
+        right: 0;
+    }
+}
+
+
+/* DISABLED */
+
+
+/* 
+.card-content {
+    margin: 30px;
+}
+
+.card {
+    max-width: 325px;
+    width: 325px;
+    height: auto;
+    margin: 25px;
+}
+
+.card-image {
+    max-height: 200px;
+}
+
+.card-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-info {
+    padding: 10px 20px 20px;
+}
+
+.card-info h3 {
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    margin-bottom: 5px;
+}
+
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 30px 60px;
+}
+
+.pagination li {
+    margin: 5px;
+}
+
+.pagination li a {
+    font-size: 1em; 1.2em
+    line-height: 35px; 45px
+}
+
+.previous-page,
+.next-page {
+    width: 60px; 80px
+}
+
+.current-page,
+.dots {
+    width: 35px; 45px
+}
+*/
